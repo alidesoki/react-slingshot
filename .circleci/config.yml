@@ -9,6 +9,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
+      - run: npm i
       - run: npm run lint
       - save_cache:
           paths:
