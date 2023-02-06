@@ -30,10 +30,11 @@ jobs:
       - npm audit
 
 workflows:
-  - build
-  - test:
-      requires: 
-        - build
-  - analyze:
-      requires:
-        - test
+  pipline:
+    - build
+    - test:
+        requires: 
+          - build
+    - analyze:
+        requires:
+          - test
