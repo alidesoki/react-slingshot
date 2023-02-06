@@ -21,7 +21,9 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: "packages"
+          keys: 
+            - "packages"
+      - run: npm i
       - run: npm run test
   
   analyze: 
