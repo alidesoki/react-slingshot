@@ -21,16 +21,16 @@ jobs:
       - checkout
       - restore_cache:
           key: "packages"
-      - npm run test
+      - run: npm run test
   
   analyze: 
     <<: *defaults
     steps:
       - checkout
-      - npm audit
+      - run: npm audit
 
 workflows:
-  pipline:
+  pipeline:
     jobs:
       - build
       - test:
