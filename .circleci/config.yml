@@ -31,10 +31,11 @@ jobs:
 
 workflows:
   pipline:
-    - build
-    - test:
-        requires: 
-          - build
-    - analyze:
-        requires:
-          - test
+    jobs:
+      - build
+      - test:
+          requires: 
+            - build
+      - analyze:
+          requires:
+            - test
